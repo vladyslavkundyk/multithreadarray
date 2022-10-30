@@ -6,16 +6,16 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		int[] array1 = new int[200000000];
+		int[] array = new int[200000000];
 		Random rannum = new Random();
-		for (int i = 0; i < array1.length; i++) {
-			array1[i] = rannum.nextInt(10);
+		for (int i = 0; i < array.length; i++) {
+			array[i] = rannum.nextInt(10);
 		}
 
 		// Подсчет суммы простым алгоритмом
 
 		long timeStart = System.currentTimeMillis();
-		long result1 = ArrayMultiThread.singleThreadSum(array1);
+		long result1 = ArrayMultiThread.singleThreadSum(array);
 		long timeStop = System.currentTimeMillis();
 		long timeResult1 = timeStop - timeStart;
 		System.out.println("Сумма через простой алгоритм: " + result1);
@@ -26,7 +26,7 @@ public class Main {
 		// Многопоточный подсчет суммы
 
 		timeStart = System.currentTimeMillis();
-		long result2 = ArrayMultiThread.multiThreadSum(array1);
+		long result2 = ArrayMultiThread.multiThreadSum(array);
 		timeStop = System.currentTimeMillis();
 		long timeResult2 = timeStop - timeStart;
 		System.out.println("Сумма через многопоточность: " + result2);
