@@ -37,20 +37,20 @@ public class ArrayMultiThread implements Runnable {
 
 	// Многопоточный подсчет суммы
 
-	public static long countMultiThread(int[] arr) {
+	public static long countMultiThread(int[] array) {
 
 		int threadCount = Runtime.getRuntime().availableProcessors() * 2;
 
 		ArrayMultiThread[] threadArray = new ArrayMultiThread[threadCount];
 
-		int arraySize = arr.length / threadCount;
+		int arraySize = array.length / threadCount;
 		int arrayStart = 0;
 		int arrayEnd = arraySize;
 		for (int i = 0; i < threadArray.length; i++) {
 			if (i == threadArray.length - 1) {
-				arrayEnd = arr.length - 1;
+				arrayEnd = array.length - 1;
 			}
-			threadArray[i] = new ArrayMultiThread(arr, arrayStart, arrayEnd);
+			threadArray[i] = new ArrayMultiThread(array, arrayStart, arrayEnd);
 			arrayStart += arraySize + 1;
 			arrayEnd += arraySize + 1;
 		}
