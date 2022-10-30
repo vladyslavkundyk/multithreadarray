@@ -7,7 +7,7 @@ public class ArrayMultiThread implements Runnable {
 	private int arrayStart;
 	private int arrayFinish;
 
-	public ArrayMultiThread(int[] array, int arrayStart, int arrayFinish) {
+	public ArrayMultiThread (int[] array, int arrayStart, int arrayFinish) {
 		super();
 		this.array = array;
 		this.arrayStart = arrayStart;
@@ -48,7 +48,7 @@ public class ArrayMultiThread implements Runnable {
 
 	public long count(int[] array) {
 		for (int i = arrayStart; i <= arrayFinish; i++) {
-			result = array[i];
+			result = result + array[i];
 		}
 		return result;
 	}

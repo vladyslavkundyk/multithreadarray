@@ -19,7 +19,7 @@ public class Main {
 			arrayTest[i] = (rannum.nextInt(10, 50));
 		}
 		for (int i = 0; i < arrayTest.length; i++) {
-			resultTest = arrayTest[i++];
+			resultTest = resultTest + arrayTest[i];
 		}
 
 		double timeResultTest = ((double) System.currentTimeMillis() - timeTest);
@@ -34,7 +34,7 @@ public class Main {
 		int array[] = new int[200000000];
 
 		for (int i = 0; i < array.length; i++) {
-			array[i] = (rannum.nextInt(10, 50));
+			array[i] = (rannum.nextInt(100000000));
 		}
 
 		ArrayMultiThread array1 = new ArrayMultiThread(array, 0, 50000000);
