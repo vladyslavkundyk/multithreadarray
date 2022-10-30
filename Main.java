@@ -16,7 +16,7 @@ public class Main {
 		long resultTest = 0;
 
 		for (int i = 0; i < arrayTest.length; i++) {
-			arrayTest[i] = (rannum.nextInt(10, 50));
+			arrayTest[i] = (rannum.nextInt(arrayTest.length));
 		}
 		for (int i = 0; i < arrayTest.length; i++) {
 			resultTest = resultTest + arrayTest[i];
@@ -34,7 +34,7 @@ public class Main {
 		int array[] = new int[200000000];
 
 		for (int i = 0; i < array.length; i++) {
-			array[i] = (rannum.nextInt(100000000));
+			array[i] = (rannum.nextInt(array.length));
 		}
 
 		ArrayMultiThread array1 = new ArrayMultiThread(array, 0, 50000000);
@@ -65,7 +65,7 @@ public class Main {
 		result = array1.getResult() + array2.getResult() + array3.getResult() + array4.getResult();
 		double timeResult = ((double) System.currentTimeMillis() - time);
 		System.out.println();
-		System.out.println("Сумма четырёх массивов: " + result);
+		System.out.println("Сумма из четырёх массивов: " + result);
 		System.out.println("Скорость: " + timeResult + " ms");
 
 		double timeResultDifference = timeResultTest - timeResult;
