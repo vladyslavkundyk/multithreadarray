@@ -27,17 +27,17 @@ public class ArrayMultiThread implements Runnable {
 
 	// Подсчет суммы простым алгоритмом
 
-	public static long singleThreadSum(int[] array) {
-		long singleThreadArraySum = 0;
+	public static long countSingleThread(int[] array) {
+		long resultSingleThreadArray = 0;
 		for (int i = 0; i < array.length; i++) {
-			singleThreadArraySum += array[i];
+			resultSingleThreadArray += array[i];
 		}
-		return singleThreadArraySum;
+		return resultSingleThreadArray;
 	}
 
 	// Многопоточный подсчет суммы
 
-	public static long multiThreadSum(int[] arr) {
+	public static long countMultiThread(int[] arr) {
 
 		int threadCount = Runtime.getRuntime().availableProcessors() * 2;
 
@@ -63,11 +63,11 @@ public class ArrayMultiThread implements Runnable {
 			}
 		}
 
-		long multiThreadArraySum = 0;
+		long resultMultiThreadArray = 0;
 		for (int i = 0; i < threadArray.length; i++) {
-			multiThreadArraySum += threadArray[i].getResult();
+			resultMultiThreadArray += threadArray[i].getResult();
 		}
-		return multiThreadArraySum;
+		return resultMultiThreadArray;
 	}
 
 	@Override

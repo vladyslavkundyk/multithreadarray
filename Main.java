@@ -15,7 +15,7 @@ public class Main {
 		// Подсчет суммы простым алгоритмом
 
 		long timeStart = System.currentTimeMillis();
-		long result1 = ArrayMultiThread.singleThreadSum(array);
+		long result1 = ArrayMultiThread.countSingleThread(array);
 		long timeStop = System.currentTimeMillis();
 		long timeResult1 = timeStop - timeStart;
 		System.out.println("Сумма через простой алгоритм: " + result1);
@@ -26,7 +26,7 @@ public class Main {
 		// Многопоточный подсчет суммы
 
 		timeStart = System.currentTimeMillis();
-		long result2 = ArrayMultiThread.multiThreadSum(array);
+		long result2 = ArrayMultiThread.countMultiThread(array);
 		timeStop = System.currentTimeMillis();
 		long timeResult2 = timeStop - timeStart;
 		System.out.println("Сумма через многопоточность: " + result2);
